@@ -7,7 +7,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/blocks', function(req, res){
-    var blocks = ['Fixed', 'Movable', 'Rotating'];
+    var blocks = '<ul><li>Fixed</li></ul>';
     res.send(blocks);
 });
 
