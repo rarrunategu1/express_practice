@@ -1,0 +1,22 @@
+{
+  "name": "mern_express",
+  "version": "1.0.0",
+  "description": "express practice",
+  "main": "express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rarrunategu1/express_practice.git"
+  },
+  "author": "Rose Parker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rarrunategu1/express_practice/issues"
+  },
+  "homepage": "https://github.com/rarrunategu1/express_practice#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
