@@ -7,8 +7,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/blocks', function(req, res){
-    var blocks = '<ul><li>Fixed</li></ul>';
-    res.send(blocks);
+    res.redirect('/parts');
 });
 
 app.listen(process.env.PORT, process.env.IP, 8080, function() {
