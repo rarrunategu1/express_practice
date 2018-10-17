@@ -7,7 +7,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/blocks', function(req, res){
-    res.redirect('/parts');
+    res.redirect(301, '/parts');
 });
 
 app.listen(process.env.PORT, process.env.IP, 8080, function() {
