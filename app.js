@@ -11,8 +11,15 @@ var blocks = {
 
 app.get('/blocks/:name', function(req, res) {
    var description = blocks[req.params.name];
-   res.json(description);  //will also set status code to 200 success
-});
+   if (!description) {
+       res.status(404).json('No description found for ' + req.params.name); //sends a return if no block is found with the param entered
+       
+   } else {
+       
+       res.json(description);  //will also set status code to 200 success
+
+   }
+   });
 
 app.listen(process.env.PORT, process.env.IP, 8080, function() {
     console.log('Listening on port 8080');
