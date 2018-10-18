@@ -3,11 +3,15 @@ var app = express();
 var logger = require('./logger');
 app.use(logger);
 
-app.use(express.static('public'));
+var blocks = {
+    'Fixed': 'Fastened securely in position',
+    'Movable': 'Capable of being moved',
+    'Rotating': 'Moving in a circle around its center'
+};
 
-app.get('/blocks', function(req, res) {
-    var blocks = ['Fixed', 'Movable', 'Rotating'];
-    res.json(blocks);
+app.get('/blocks/:name', function(req, res) {
+   var description = blocks[req.params.name];
+   res.json(description);  //will also set status code to 200 success
 });
 
 app.listen(process.env.PORT, process.env.IP, 8080, function() {
