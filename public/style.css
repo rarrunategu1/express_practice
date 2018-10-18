@@ -1,0 +1,25 @@
+body {
+    background-image: url("bg-stars.png");
+    
+}
+
+.center {
+    width: 50%;
+    margin: auto;
+    margin-top: 20%;
+  
+}
+
+.block-list {
+    
+    padding: 10px 30px 10px 30px;
+    background-color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 35px;
+}
