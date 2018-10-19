@@ -3,12 +3,17 @@ var app = express();
 var logger = require('./logger');
 app.use(logger);
 
+app.use(express.static('public'));
+
 var blocks = {
     'Fixed': 'Fastened securely in position',
     'Movable': 'Capable of being moved',
-    'Rotating': 'Moving in a circle around its center'
-};
-
+    'Rotating': 'Moving in a circle around its center'};
+    
+app.get('/blocks', function(req, res) {
+    res.json(Object.keys(blocks));
+});
+    
 var locations = {
     'Fixed': 'First floor', 'Movable': 'Second floor', 'Rotating': 'Penthouse'
 };
@@ -21,6 +26,7 @@ app.param('name', function(req, res, next) {
     
     next();
 });
+
 app.get('/blocks/:name', function(req, res) {
    var description = blocks[req.blockName];
    if (!description) {
