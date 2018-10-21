@@ -18,5 +18,8 @@
   "homepage": "https://github.com/rarrunategu1/express_practice#readme",
   "devDependencies": {
     "nodemon": "^1.18.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3"
   }
 }
