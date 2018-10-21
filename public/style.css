@@ -4,22 +4,41 @@ body {
 }
 
 .center {
-    width: 50%;
+    width: 80%;
     margin: auto;
-    margin-top: 20%;
+    margin-top: 10%;
   
 }
 
-.block-list {
-    
+.block-list, form {
     padding: 10px 30px 10px 30px;
     background-color: white;
+    
 }
 
-ul {
+ul, form{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding-bottom: 10px;
     font-size: 20px;
     line-height: 35px;
 }
+ .form-wrapper input[type="submit"] {
+   display: block;
+   background: blue;
+   color: white;
+   border: none;
+   padding: 10px 30px 10px 30px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 10px;
+ }
+   
+   .form-wrapper input[name="name"], input[name="description"] {
+   width: 100%;
+   height: 25px;
+   font-size: 16px;
+   
+   
+ }
