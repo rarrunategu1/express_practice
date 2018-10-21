@@ -13,6 +13,13 @@ app.use('/', express.static('public'));
     'Fixed': 'Fastened securely in position',
     'Movable': 'Capable of being moved',
     'Rotating': 'Moving in a circle around its center'};
+    
+//create delete route that calls delete function
+app.delete('/blocks/:name', function(req, res) {
+    delete blocks[req.blockName];  //removes entry from blocks object above
+    res.sendStatus(200);  //sets response body to ok
+    
+});
 
 app.post('/blocks', parseUrlencoded, function(req, res) {
     var newBlock = req.body;
