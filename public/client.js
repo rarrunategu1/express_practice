@@ -5,9 +5,9 @@ $(function(){
         var list = [];
         for(var i in blocks){
             block = blocks[i];
-            content = '<a href="/blocks/' +block+'">'+block+'</a>'; //link to each blocks description
+             //link to each blocks description
             //adds delete link with image to each block item
-            'a href="#" data-block="'+block+'"><img src="del.jpg"></a>';
+            content = '<a href="#" data-block="'+block+'"><img src="del.jpg" width = "20px" height: "auto"></a> '+'<a href="/blocks/' +block+'">'+block+'</a>';
             list.push($('<li>', { html: content }));
         }
         $('.block-list').append(list);
