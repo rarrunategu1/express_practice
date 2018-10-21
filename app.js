@@ -1,6 +1,10 @@
 var express = require("express");
 var app = express();
 var logger = require('./logger');
+
+var bodyParser = require('body-parser');
+var parseUrlencoded = bodyParser.urlencoded({extended: false }); //fores use of the natie querystring Node Library
+
 app.use(logger);
 
 app.use('/', express.static('public'));
@@ -9,6 +13,13 @@ app.use('/', express.static('public'));
     'Fixed': 'Fastened securely in position',
     'Movable': 'Capable of being moved',
     'Rotating': 'Moving in a circle around its center'};
+
+app.post('/blocks', parseUrlencoded, function(req, res) {
+    var newBlock = req.body;
+    blocks[newBlock.name] = newBlock.description;
+    
+    res.status(201).json(newBlock.name);
+});
 
     
 app.get('/blocks', function(req, res) {
